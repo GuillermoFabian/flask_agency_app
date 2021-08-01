@@ -1,6 +1,4 @@
-# Flask_agency_app
-
-#Discography
+# Discography
 
 
 ## Start the project locally
@@ -107,13 +105,13 @@ This API supports two types of resources `/singers` and `/songs`. Each resource 
 - <b>You need to update the ACCESS_TOKEN in the below requests with JWT valid token.</b>
 - <b>The below requests assumes you are running the app locally, so you need to update the requests with the base URL or your URL after deployment.</b>
 
-#### GET /singers
+#### GET /singer
 
 - General: returns a list of all singers
 - Sample request:
 
 ```bash
-curl -X GET http://127.0.0.1:5000/singers -H "Content-Type: application/json" -H "Authorization: Bearer ACCESS_TOKEN"
+curl -X GET http://127.0.0.1:5000/singer -H "Content-Type: application/json" -H "Authorization: Bearer ACCESS_TOKEN"
 ```
 
 - Sample response:
@@ -130,7 +128,7 @@ curl -X GET http://127.0.0.1:5000/singers -H "Content-Type: application/json" -H
 }
 ```
 
-#### GET /songs
+#### GET /song
 
 - General: returns a list of all songs
 - Sample request:
@@ -161,13 +159,13 @@ curl -X GET http://127.0.0.1:5000/songs -H "Content-Type: application/json" -H "
 }
 ```
 
-#### POST /singers
+#### POST /singer
 
 - General: create a new singer
 - Sample request:
 
 ```bash
-curl -X POST http://127.0.0.1:5000/singers -H "Content-Type: application/json" -H "Authorization: Bearer ACCESS_TOKEN"  -d '{"name" : "New_singer_1", "age" : "30", "gender":"Male"}'
+curl -X POST http://127.0.0.1:5000/singer -H "Content-Type: application/json" -H "Authorization: Bearer ACCESS_TOKEN"  -d '{"name" : "New_singer_1", "age" : "30", "gender":"Male"}'
 ```
 
 - Sample response: <i>returns the new singer id</i>
@@ -176,7 +174,7 @@ curl -X POST http://127.0.0.1:5000/singers -H "Content-Type: application/json" -
 { "created": 4, "success": true }
 ```
 
-#### POST /songs
+#### POST /song
 
 - General: create a new song
 - Sample request:
@@ -191,7 +189,7 @@ curl -X POST http://127.0.0.1:5000/songs -H "Content-Type: application/json" -H 
 { "created": 3, "success": true }
 ```
 
-#### PATCH /singers/\<int:singer_id\>
+#### PATCH /singer/\<int:singer_id\>
 
 - General: update an existing singer
 - Sample request:
@@ -210,7 +208,7 @@ curl -X PATCH http://127.0.0.1:5000/singers/1 -H "Content-Type: application/json
 }
 ```
 
-#### PATCH /songs/\<int:song_id\>
+#### PATCH /song/\<int:song_id\>
 
 - General: update an existing song
 - Sample request:
@@ -235,13 +233,13 @@ curl -X PATCH http://127.0.0.1:5000/songs/1 -H "Content-Type: application/json" 
 }
 ```
 
-#### DELETE /singers/\<int:singer_id\>
+#### DELETE /singer/\<int:singer_id\>
 
 - General: delete an existing singer
 - Sample request:
 
 ```bash
-curl -X DELETE http://127.0.0.1:5000/singers/1 -H "Authorization: Bearer ACCESS_TOKEN"
+curl -X DELETE http://127.0.0.1:5000/singer/1 -H "Authorization: Bearer ACCESS_TOKEN"
 ```
 
 - Sample response: <i>returns the deleted singer id</i>
@@ -250,13 +248,13 @@ curl -X DELETE http://127.0.0.1:5000/singers/1 -H "Authorization: Bearer ACCESS_
 { "delete": 1, "success": true }
 ```
 
-#### DELETE /songs/\<int:song_id\>
+#### DELETE /song/\<int:song_id\>
 
 - General: delete an existing song
 - Sample request:
 
 ```bash
-curl -X DELETE http://127.0.0.1:5000/songs/1 -H "Authorization: Bearer ACCESS_TOKEN"
+curl -X DELETE http://127.0.0.1:5000/song/1 -H "Authorization: Bearer ACCESS_TOKEN"
 ```
 
 - Sample response: <i>returns the deleted song id</i>
